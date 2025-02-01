@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import  java.util.Scanner;
 
@@ -11,9 +12,9 @@ public class main {
         while(continuar.equalsIgnoreCase("S")){
             Scanner s = new Scanner(System.in);
             System.out.println("Qual o seu nome?");
-            String name = s.next();
-            String[] partes = name.split(" ");
+            String name = s.nextLine()  ;
 
+            //String[] partes = name.split(" ");
 
 
 
@@ -21,18 +22,19 @@ public class main {
                 System.out.println("Qual seu sexo? M para Masculino e F para Feminino");
                 String sexo = s.next();
 
-                if (sexo.equalsIgnoreCase("M")) {
-                    listaM.add(name);
-                } else if (sexo.equalsIgnoreCase("F")) {
-                    listaF.add(name);
-                }
+                    if (sexo.equalsIgnoreCase("M")) {
+                        listaM.add(name);
+                    } else if (sexo.equalsIgnoreCase("F")) {
+                        listaF.add(name);
+                    }
 
                 s = new Scanner(System.in);
                 System.out.println("Continuar?  S/N");
                 continuar = s.next();
 
 
-
+            Collections.sort(listaM);
+            Collections.sort(listaF);
 
 
            // System.out.println(name);
